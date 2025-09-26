@@ -89,28 +89,30 @@ const PageWrapper = styled.div`
 
 const Main = styled.main`
   flex: 1;
-  padding: 120px 20px 60px; /* Header 공간 확보 */
+  padding: 140px 20px 80px; 
   max-width: 1100px;
   margin: 0 auto;
 `;
 
 const TextBlock = styled.div`
   margin-bottom: 40px;
+  text-align: center;
 `;
 
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 42px);  
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 8px;
+  line-height: 1.2;         
+  margin-bottom: 16px;      
   color: black;
 `;
 
 const Subtitle = styled.h2`
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 20px); 
   font-weight: 500;
-  margin-bottom: 40px;
-  color: black;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 40px;     
 `;
 
 const CardGrid = styled.div`

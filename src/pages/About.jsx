@@ -66,22 +66,24 @@ const Main = styled.main`
 `;
 
 const TextBlock = styled.div`
-  margin-bottom: 60px; /* 타이틀과 본문 간격 크게 */
+  margin-bottom: 80px;
+  text-align: center;
 `;
 
 const Title = styled.h1`
-  font-size: 42px;
+  font-size: clamp(28px, 5vw, 42px);  
   font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 12px;
+  line-height: 1.2;
+  margin-bottom: 16px; 
   color: black;
 `;
 
 const Subtitle = styled.h2`
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 500;
-  margin-bottom: 40px;
+  line-height: 1.4;
   color: #333;
+  margin-bottom: 40px;
 `;
 
 const Paragraph = styled.p`
@@ -90,9 +92,9 @@ const Paragraph = styled.p`
   margin-bottom: 2.5rem;
   color: #222;
 
-  max-width: 800px;   /* ✅ 본문 폭 제한 */
-  margin-left: auto;  /* ✅ 가운데 정렬 */
-  margin-right: auto; /* ✅ 가운데 정렬 */
-  text-align: left;   /* ✅ 텍스트는 왼쪽 정렬 */
+  max-width: 800px;   
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: left;   
 `;
 
