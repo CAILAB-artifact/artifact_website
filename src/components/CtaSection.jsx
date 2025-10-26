@@ -79,7 +79,7 @@ const MainImage = styled.img`
 const SideImageLeft = styled.img`
   position: absolute;
   top: 15%;
-  left: -7%;
+  left: -5%;
   width: clamp(80px, 12vw, 110px);
   height: clamp(120px, 20vw, 170px);
   object-fit: cover;
@@ -95,10 +95,10 @@ const SideImageLeft = styled.img`
 
 const SideImageRight = styled.img`
   position: absolute;
-  top: 12%;
-  right: -8%;
-  width: clamp(80px, 12vw, 110px);
-  height: clamp(180px, 25vw, 280px);
+  top: 20%;
+  right: -3%;
+  width: clamp(80px, 12vw, 100px);
+  height: clamp(180px, 25vw, 250px);
   object-fit: cover;
 
   filter: grayscale(100%);

@@ -28,8 +28,8 @@ export default function WorkDetail() {
       <Main>
         {/* 제목 영역 */}
         <TextBlock>
-          <Title>Thresholds of Fragility: Heritage at Risk</Title>
-          <Subtitle>취약성의 임계선: 위기의 문화유산</Subtitle>
+          <Title>Resonance of Fragments</Title>
+          <Subtitle>파편의 공명</Subtitle>
         </TextBlock>
       </Main>
       <DescriptionSection>

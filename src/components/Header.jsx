@@ -32,6 +32,7 @@ const NavBar = styled.header`
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box; /* padding이 width에 포함되도록 하여 우측 오버플로우 방지 */
   padding: 20px 30px;
   background: transparent;
   display: flex;
@@ -39,6 +40,7 @@ const NavBar = styled.header`
   align-items: center;
   z-index: 1000;
 `;
+
 
 const MenuButton = styled.button`
   display: none;

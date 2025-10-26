@@ -4,15 +4,16 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 // 이미지
-import workdeatil3 from "../assets/workdetail3.png";
-import workdeatil3_2 from "../assets/workdetail3-2.png";
+import workdetail2_1 from "../assets/workdetail2-1.png";
+import workdeatil2_2 from "../assets/workdetail2-2.png";
+import workdeatil2_3 from "../assets/workdetail2-3.png";
 
 export default function WorkDetail() {
   const videoIframe = `
     <iframe width="560" height="315" src="https://www.youtube.com/embed/TvVtYaqCni8?si=wNm4h8rXhVgDVBaO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   `;
 
-  const images = [workdeatil3, videoIframe, workdeatil3_2];
+  const images = [workdetail2_1, videoIframe, workdeatil2_2, workdeatil2_3];
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -28,8 +29,8 @@ export default function WorkDetail() {
       <Main>
         {/* 제목 영역 */}
         <TextBlock>
-          <Title>Thresholds of Fragility: Heritage at Risk</Title>
-          <Subtitle>취약성의 임계선: 위기의 문화유산</Subtitle>
+          <Title>Time of Materially</Title>
+          <Subtitle>물성의 시간</Subtitle>
         </TextBlock>
       </Main>
       <DescriptionSection>
@@ -58,46 +59,35 @@ export default function WorkDetail() {
         {/* 회색 설명 영역 */}
         <Content>
           <Paragraph>
-            국립해양유산연구소 자료에 따르면, 해양 출수 유물의 97%가 도자기이며, 
-            최근 급격한 해수 온도 상승과 오염 물질 유입으로 인한 부식과 손상이 
-            가속화되고 있음. 작품 〈취약성의 임계선: 위기의 문화유산〉은 이러한 해양 
-            출수 도자기를 중심으로, 기후변화와 환경오염으로 인해 문화유산이 직면한 
-            손상 문제를 디지털 기술로 시각화 함.
+            &lt;물성의 시간&gt;은 전통 장신구 떨잠을 단순한 장식물이 아니라, 시간 속에서 끊임없이 변화하는 물질의 흐름으로 
+            조명한 작품으로써, 작가는 떨잠을 빛과 금속, 유리와 산호, 진주와 옥 같은 서로 다른 재료들은 시대의 기술과 미적 감각, 
+            여성의 삶과 시간을 응축한 물질적 기억의 매개체로 간주함.
           </Paragraph>
 
           <Paragraph>
-            이 미디어 작업은 유물의 다시점 3D RGB 4K 60FPS 이미지와 3차원 
-            CT 데이터를 결합해 원형을 디지털로 재현하는 동시에, 실시간 환경 
-            뉴스 데이터를 연동해 기후변화와 오염 수치에 따라 손상 과정을 가속·감속 
-            시뮬레이션 함. 특히 CT 데이터는 수분 침투와 균열 과정의 시뮬레이션을 통해, 
-            오염이 심화될수록 유물 손상이 누적되는 양상을 보여줌. 또한 이 작업은 단순한 
-            보존을 넘어, 디지털 데이터가 지닌 고유한 특성을 통해 환경 문제와 문화유산 
-            보존이라는 메시지를 확장하고 있음. 관람객은 유물의 과거를 기록하는 차원을 넘어, 
-            변화와 재해석을 통해 새로운 의미와 형태로 확장되는 가능성을 경험하게 됨.
+            본 미디어 작품은 떨잠을 디지털 매체로 변환해, 보석의 굴절과 광택, 산호와 유리의 색감이 해체되고 다시 재구성되는 
+            과정을 드러내고자 함. 유물은 과거에 정지된 객체가 아니라, 시간 속에서 살아 움직이며 변화하는 매체로 다시 태어남. 
+            결과적으로 &lt;물성의 시간&gt;은 단순한 재현을 넘어, 물성과 시간이 얽히고 흩어지는 흐름 속에서, 물성이란 고정된 본질이 
+            아니라 끊임없이 변화하는 존재임을 일깨우며, 관람객은 이 작품을 통해 반짝임과 파동의 리듬을 통해 물질이 지닌 감각적 
+            시간을 체험할 수 있음.
           </Paragraph>
 
           <Paragraph>
-           According to the National Research Institute of Maritime Cultural 
-           Heritage, 97% of marine-recovered artifacts are ceramics, and 
-           corrosion and damage have accelerated with recent rises in sea 
-           temperature and the influx of pollutants. &lt;Thresholds of 
-           Fragility: Heritage at Risk&gt; focuses on these marine finds, 
-           digitally visualizing the damage driven by climate change and 
-           environmental pollution.
+           &lt;Time of Materiality&gt; reframes the traditional Korean hair ornament tteoljam—not as 
+           a mere accessory, but as a stream of matter continually changing through time. The artist 
+           regards its heterogeneous substances—light and metal, glass and coral, pearl and jade—as 
+           mediators of material memory, condensing the technologies and aesthetics of each period 
+           alongside the lived time of women.
           </Paragraph>
 
           <Paragraph>
-           The work combines multi-view 3D RGB 4K 60fps imagery with 3D CT 
-           data to digitally reconstruct the originals, while linking to 
-           real-time environmental news feeds to accelerate or decelerate 
-           damage simulations based on climate and pollution indicators. 
-           CT-based simulations of moisture ingress and cracking reveal 
-           how damage accumulates as contamination intensifies. Beyond 
-           simple preservation, the piece leverages the distinctive 
-           capacities of digital data to amplify the message of environmental 
-           crisis and cultural-heritage conservation. Visitors move past 
-           mere record-keeping to experience the potential for heritage to 
-           expand into new meanings and forms through change and reinterpretation.
+           In this media work, the tteoljam is translated into a digital medium to expose the process 
+           by which a gem’s refraction and sheen, and the chroma of coral and glass, are deconstructed 
+           and recomposed. The artifact is reborn not as a static object of the past, but as a medium 
+           that moves and transforms within time. Ultimately, Time of Materiality goes beyond representation. 
+           Within the flows where material and time intertwine and scatter, it reminds us that materiality 
+           is not a fixed essence but an ever-evolving presence. Through rhythms of shimmer and wave, 
+           viewers experience the sensuous temporality of matter.
           </Paragraph>
         </Content>
       </DescriptionSection>

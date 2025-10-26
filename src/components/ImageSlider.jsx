@@ -14,6 +14,7 @@ export default function ImageSlider({ images = [] }) {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
+        initialSlide={2} // 기본으로 3번째(인덱스 2)를 활성화
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 0,

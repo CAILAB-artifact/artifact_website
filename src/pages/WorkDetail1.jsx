@@ -9,7 +9,11 @@ import workdetail1_1 from "../assets/workdetail1-2.png";
 import workdetail1_3 from "../assets/workdetail1-3.png";
 
 export default function WorkDetail() {
-  const images = [workdetail1, workdetail1_1, workdetail1_3];
+  const videoIframe = `
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TvVtYaqCni8?si=wNm4h8rXhVgDVBaO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  `;
+
+  const images = [workdetail1, workdetail1_1, videoIframe, workdetail1_3];
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -38,10 +42,12 @@ export default function WorkDetail() {
           <ArrowButton onClick={prevSlide}>‹</ArrowButton>
 
           <ImageContainer>
-            <SlideImage
-              src={images[current]}
-              alt={`slide ${current + 1}`}
-            />
+            {/* 이미지일 경우는 <SlideImage>, iframe 문자열일 경우는 그대로 삽입 */}
+            {typeof images[current] === "string" && images[current].trim().startsWith("<iframe") ? (
+              <VideoWrapper dangerouslySetInnerHTML={{ __html: images[current] }} />
+            ) : (
+              <SlideImage src={images[current]} alt={`slide ${current + 1}`} />
+            )}
           </ImageContainer>
 
           <ArrowButton onClick={nextSlide}>›</ArrowButton>
@@ -188,6 +194,21 @@ const SlideImage = styled.img`
   object-fit: cover; /* 프레임에 꽉 차게 */
   border-radius: 8px;
   transition: opacity 0.5s ease;
+`;
+
+const VideoWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
 `;
 
 
