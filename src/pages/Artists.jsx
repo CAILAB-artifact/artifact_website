@@ -9,6 +9,7 @@ import artist1 from "../assets/artist1.png";
 import artist2 from "../assets/artist2.png";
 import artist3 from "../assets/artist3.png";
 import artist4 from "../assets/artist4.png";
+import artist5 from "../assets/artist5.png";
 
 export default function Artists() {
   const artists = [
@@ -17,9 +18,9 @@ export default function Artists() {
       name: "Bo A Rhee",
       email: "boatersea@cau.ac.kr",
       degree:
-        "Ph.D. Florida State University / 예술경영학 박사\nM.A. 뉴욕대학교 / 미술학 석사, New York University / 예술경영학 석사 수료\nB.A. 성균관대학교 / 경영정보학",
+        "Ph.D. Florida State University / 예술경영학 박사\nM.A. 성균관대학교 / 미술학 석사, New York University / 예술경영학 석사 수료\nB.A. 성균관대학교 / 문헌정보학 학사",
       research:
-        "Museum technology and informatics / Interactive media interaction design\nUser experience in exhibition & media (digital media, VR, AR, Metaverse)\nCulture consumer research using AI, big data and computer vision",
+        "Museum technology and informatics / Interactive media & interaction design,\nUser experience in exhibition & media (digital media, VR, AR, Metaverse),\n Culture consumer research using A.I., big data, and computer vision, Visitor\n prediction based on artificial intelligence and big data, Digital heritage user\n experience design",
       image: artist1,
     },
     {
@@ -33,13 +34,22 @@ export default function Artists() {
     },
     {
       role: "Creative & Research Team",
-      name: "Sojung Park",
-      email: "boatersea@cau.ac.kr",
+      name: "Seongmee Yoon",
+      email: "bv829960@cau.ac.kr",
       degree:
-        "Ph.D. Florida State University / 예술경영학 박사\nM.A. 뉴욕대학교 / 미술학 석사, New York University / 예술경영학 석사 수료\nB.A. 성균관대학교 / 경영정보학",
+        "Ph.D. candidate 중앙대학교 문화재학과 / 디지털 문화유산학 이학 박사 \nM.A. Newcastle University UK, Art Museum and Gallery Studies / 문학 석사 \nB.A. 충북대학교 고고미술사학과 / 문학 학사",
       research:
-        "Museum technology and informatics / Interactive media interaction design\nUser experience in exhibition & media (digital media, VR, AR, Metaverse)\nCulture consumer research using AI, big data and computer vision",
+        "박물관학(Museum Studies), 디지털 인문학(Digital Humanities), 미술관 정보학(Museum \n Informatics), 박물관 관람객 경험(Visitor Experience in museums), 유산해석(Heritage \n Interpretation), 박물관 지역사회 참여 (Community Engagement in Museums)",
       image: artist3,
+    },
+    {
+      role: "Creative & Research Team",
+      name: "Soeun Park",
+      email: "sj.caugsaim@gmail.com",
+      degree: `M.S. Candidate Chung-Ang University, Graduate School of Advanced Imaging \n Science, Multimedia & Film / 공학 석사과정
+              B.A. Chung-Ang University, College of Art & Technology & College of \n Software / 공학 학사`,
+      research: `이미징 공학 및 예술 (Imaging Science and Arts), 인공지능 (Artificial Intelligence), 데이\n터 분석 및 시각화 (Data Analysis and Visualization)`,
+      image: artist4,
     },
     {
       role: "Creative & Research Team",
@@ -49,7 +59,7 @@ export default function Artists() {
         "Ph.D. Florida State University / 예술경영학 박사\nM.A. 뉴욕대학교 / 미술학 석사, New York University / 예술경영학 석사 수료\nB.A. 성균관대학교 / 경영정보학",
       research:
         "Museum technology and informatics / Interactive media interaction design\nUser experience in exhibition & media (digital media, VR, AR, Metaverse)\nCulture consumer research using AI, big data and computer vision",
-      image: artist4,
+      image: artist5,
     },
   ];
 

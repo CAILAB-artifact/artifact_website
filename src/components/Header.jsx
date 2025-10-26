@@ -1,37 +1,77 @@
 // src/components/Header.jsx
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 
-export default function Header({ color = "white" }) { 
+export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <NavBar>
-      <NavMenu>
-        <NavItem><StyledLink to="/" $color={color}>HOME</StyledLink></NavItem>
-        <NavItem><StyledLink to="/work" $color={color}>WORK</StyledLink></NavItem>
-        <NavItem><StyledLink to="/artists" $color={color}>ARTISTS</StyledLink></NavItem>
-        <NavItem><StyledLink to="/about" $color={color}>ABOUT</StyledLink></NavItem>
+      {/* 햄버거 버튼 */}
+      <MenuButton onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FiX size={28} color="black" /> : <FiMenu size={28} color="black" />}
+      </MenuButton>
+
+      {/* 메뉴 목록 */}
+      <NavMenu $open={menuOpen}>
+        <NavItem><StyledLink to="/" onClick={() => setMenuOpen(false)}>HOME</StyledLink></NavItem>
+        <NavItem><StyledLink to="/work" onClick={() => setMenuOpen(false)}>WORK</StyledLink></NavItem>
+        <NavItem><StyledLink to="/artists" onClick={() => setMenuOpen(false)}>ARTISTS</StyledLink></NavItem>
+        <NavItem><StyledLink to="/about" onClick={() => setMenuOpen(false)}>ABOUT</StyledLink></NavItem>
       </NavMenu>
     </NavBar>
   );
 }
 
+/* ---------------- styled ---------------- */
+
 const NavBar = styled.header`
   position: absolute;
   top: 0;
-  left: -90px;
+  left: 0;
   width: 100%;
-  padding: 20px 40px;
+  padding: 20px 30px;
   background: transparent;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   z-index: 1000;
+`;
+
+const MenuButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const NavMenu = styled.ul`
   list-style: none;
   display: flex;
   gap: 40px;
+  margin-left: 20px;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: ${({ $open }) => ($open ? "0" : "-100%")};
+    height: 100vh;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: left 0.3s ease;
+    margin-left: 0;
+  }
 `;
 
 const NavItem = styled.li`
@@ -41,9 +81,16 @@ const NavItem = styled.li`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${({ $color }) => $color}; 
+  color: black;
   position: relative;
   transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    color: white;
+    &::after {
+      background: white;
+    }
+  }
 
   &::after {
     content: "";
@@ -52,13 +99,12 @@ const StyledLink = styled(Link)`
     bottom: -4px;
     width: 0;
     height: 2px;
-    background: ${({ $color }) => $color};
+    background: black;
     transition: width 0.3s ease;
   }
 
   &:hover {
-    color: ${({ $color }) =>
-      $color === "white" ? "#ccc" : "#555"};
+    color: #555;
   }
 
   &:hover::after {

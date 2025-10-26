@@ -1,21 +1,31 @@
-// src/pages/Work.jsx
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
-// 예시 이미지 
+// 이미지 
 import work1 from "../assets/work1.png";
 import work2 from "../assets/work2.png";
 import work3 from "../assets/work3.png";
 import work4 from "../assets/work4.png";
+import work5 from "../assets/work5.png";
 
 export default function Work() {
+  const navigate = useNavigate(); // 페이지 이동용 Hook
+
+  const works = [
+    { id: 1, image: work1, title: "Passage of Heritage", artist: "LEVINNON ARTISTS", date: "10 - 25 APR 2024" },
+    { id: 2, image: work2, title: "Time of Materially", artist: "JOHNSON, MARY ANN", date: "09 - 12 MAY 2024" },
+    { id: 3, image: work3, title: "Currents of Time", artist: "ⓒRTIST, EVORY", date: "01 - 30 JAN 2024" },
+    { id: 4, image: work4, title: "Resonance of Fragments", artist: "RHEA GASOTREA", date: "17 - 20 OCT 2024" },
+    { id: 5, image: work5, title: "Currents of Time", artist: "ⓒRTIST, EVORY", date: "01 - 30 JAN 2024" },
+  ];
+
   return (
     <PageWrapper>
       <Header color="black" />
       <Main>
-        {/* 상단 타이틀 */}
         <TextBlock>
           <Title>
             Unveiling and <br /> Breathing Resonance
@@ -23,55 +33,20 @@ export default function Work() {
           <Subtitle>드러내고 숨쉬다</Subtitle>
         </TextBlock>
 
-        {/* 전시 카드 그리드 */}
         <CardGrid>
-          <Card>
-            <CardImage src={work1} alt="Passage of Heritage" />
-            <CardContent>
-              <Meta>
-                <span>LEVINNON ARTISTS</span>
-                <span>10 - 25 APR 2024</span>
-              </Meta>
-              <Separator />
-              <CardTitle>Passage of Heritage</CardTitle>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardImage src={work2} alt="Time of Materially" />
-            <CardContent>
-              <Meta>
-                <span>JOHNSON, MARY ANN</span>
-                <span>09 - 12 MAY 2024</span>
-              </Meta>
-              <Separator />
-              <CardTitle>Time of Materially</CardTitle>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardImage src={work3} alt="Currents of Time" />
-            <CardContent>
-              <Meta>
-                <span>ⓒRTIST, EVORY</span>
-                <span>01 - 30 JAN 2024</span>
-              </Meta>
-              <Separator />
-              <CardTitle>Currents of Time</CardTitle>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardImage src={work4} alt="Resonance of Fragments" />
-            <CardContent>
-              <Meta>
-                <span>RHEA GASOTREA</span>
-                <span>17 - 20 OCT 2024</span>
-              </Meta>
-              <Separator />
-              <CardTitle>Resonance of Fragments</CardTitle>
-            </CardContent>
-          </Card>
+          {works.map((work) => (
+            <Card key={work.id} onClick={() => navigate(`/work/${work.id}`)}>
+              <CardImage src={work.image} alt={work.title} />
+              <CardContent>
+                <Meta>
+                  <span>{work.artist}</span>
+                  <span>{work.date}</span>
+                </Meta>
+                <Separator />
+                <CardTitle>{work.title}</CardTitle>
+              </CardContent>
+            </Card>
+          ))}
         </CardGrid>
       </Main>
 
@@ -89,7 +64,7 @@ const PageWrapper = styled.div`
 
 const Main = styled.main`
   flex: 1;
-  padding: 140px 20px 80px; 
+  padding: 140px 20px 80px;
   max-width: 1100px;
   margin: 0 auto;
 `;
@@ -100,19 +75,19 @@ const TextBlock = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: clamp(28px, 5vw, 42px);  
+  font-size: clamp(28px, 5vw, 42px);
   font-weight: 800;
-  line-height: 1.2;         
-  margin-bottom: 16px;      
+  line-height: 1.2;
+  margin-bottom: 16px;
   color: black;
 `;
 
 const Subtitle = styled.h2`
-  font-size: clamp(16px, 2.5vw, 20px); 
+  font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 500;
   line-height: 1.4;
   color: #333;
-  margin-bottom: 40px;     
+  margin-bottom: 40px;
 `;
 
 const CardGrid = styled.div`
@@ -123,7 +98,7 @@ const CardGrid = styled.div`
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; /* 모바일 1열 */
+    grid-template-columns: 1fr;
     gap: 24px;
   }
 `;
@@ -135,11 +110,17 @@ const Card = styled.div`
   flex-direction: column;
   border-radius: 8px;
   overflow: hidden;
+  cursor: pointer; /* ✅ 클릭 가능 표시 */
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 const CardImage = styled.img`
   width: 100%;
-  aspect-ratio: 5 / 6; 
+  aspect-ratio: 5 / 6;
   object-fit: cover;
   filter: grayscale(100%);
   transition: filter 0.4s ease;
@@ -149,7 +130,7 @@ const CardImage = styled.img`
   }
 
   @media (max-width: 768px) {
-    aspect-ratio: 4 / 5; 
+    aspect-ratio: 4 / 5;
   }
 `;
 
@@ -170,12 +151,12 @@ const Meta = styled.div`
 
 const Separator = styled.div`
   height: 1px;
-  background: rgba(255, 255, 255, 0.4); 
+  background: rgba(255, 255, 255, 0.4);
   margin: 8px 0 12px;
 `;
 
 const CardTitle = styled.h3`
-  font-size: 22px; 
+  font-size: 22px;
   font-weight: 700;
   line-height: 1.3;
 `;

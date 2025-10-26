@@ -8,6 +8,8 @@ import ImageSlider from "../components/ImageSlider";
 import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
+import img4 from "../assets/img4.png";
+import img5 from "../assets/img5.png";
 
 import ExhibitionText from "../components/ExhibitionText";
 import CtaSection from "../components/CtaSection";
@@ -19,12 +21,11 @@ export default function Home() {
       <Header /> {/* 항상 최상단에 고정 */}
       <Hero>
         <Background>
-          <img src={banner} alt="ceramic vase" />
+          <img src={banner} alt="banner" />
         </Background>
-        <Title>Unveiling and<br />Breathing<br />Resonance</Title>
       </Hero>
 
-      <ImageSlider images={[img1, img2, img3]} />
+      <ImageSlider images={[img1, img2, img3, img4, img5]} />
 
       <ExhibitionText />
 
@@ -40,7 +41,7 @@ export default function Home() {
 const Hero = styled.section`
   position: relative;
   width: 100%;
-  height: auto; /* 이미지 비율에 맞춰 자동 높이 */
+  height: auto; 
   overflow: hidden;
 `;
 
