@@ -8,6 +8,7 @@ import WorkDetail1 from "./pages/WorkDetail1";
 import WorkDetail2 from "./pages/WorkDetail2";
 import WorkDetail3 from "./pages/WorkDetail3";
 import WorkDetail4 from "./pages/WorkDetail4";
+import WorkDetail5 from "./pages/WorkDetail5";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/work/2" element={<WorkDetail2 />} />
         <Route path="/work/3" element={<WorkDetail3 />} />
         <Route path="/work/4" element={<WorkDetail4 />} />
+        <Route path="/work/5" element={<WorkDetail5 />} />
         <Route path="/artists" element={<Artists />} />
         <Route path="/about" element={<About />} /> 
       </Routes>

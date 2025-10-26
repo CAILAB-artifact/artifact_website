@@ -88,13 +88,13 @@ export default function WorkDetail() {
           </Paragraph>
 
           <Paragraph>
-               &lt;Passage of Heritage&gt; reconstructs three artifacts—a Bujissamji (ornamental pouch), 
-              a seal, and a blue-and-white porcelain bottle—as interactive 3D holograms that can be 
-              rotated by nearly 300 degrees. Designed for immersive observation, the installation 
-              synchronizes each artifact’s current form with high-precision internal and external 
-              3D data acquired during the research process. This allows viewers to explore both the 
-              surface textures and the inner microstructures of the artifacts simultaneously, revealing 
-              subtle traces of time that are invisible to the naked eye.
+            &lt;Passage of Heritage&gt; reconstructs three artifacts—a Bujissamji (ornamental pouch), 
+            a seal, and a blue-and-white porcelain bottle—as interactive 3D holograms that can be 
+            rotated by nearly 300 degrees. Designed for immersive observation, the installation 
+            synchronizes each artifact’s current form with high-precision internal and external 
+            3D data acquired during the research process. This allows viewers to explore both the 
+            surface textures and the inner microstructures of the artifacts simultaneously, revealing 
+            subtle traces of time that are invisible to the naked eye.
           </Paragraph>
 
           <Paragraph>

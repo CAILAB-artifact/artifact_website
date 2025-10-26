@@ -4,15 +4,17 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 // 이미지
-import workdeatil3 from "../assets/workdetail3.png";
-import workdeatil3_2 from "../assets/workdetail3-2.png";
+import workdetail4_1 from "../assets/workdetail4-1.png";
+import workdetail4_2 from "../assets/workdetail4-2.png";
+import qr_1 from "../assets/qr_1.png";
+import qr_2 from "../assets/qr_2.png";
 
 export default function WorkDetail() {
   const videoIframe = `
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/TvVtYaqCni8?si=wNm4h8rXhVgDVBaO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ggOpF1k9Ef0?si=I-HgIOwuOgeW59pi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   `;
 
-  const images = [workdeatil3, videoIframe, workdeatil3_2];
+  const images = [workdetail4_1, workdetail4_2, videoIframe];
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -58,48 +60,50 @@ export default function WorkDetail() {
         {/* 회색 설명 영역 */}
         <Content>
           <Paragraph>
-            국립해양유산연구소 자료에 따르면, 해양 출수 유물의 97%가 도자기이며, 
-            최근 급격한 해수 온도 상승과 오염 물질 유입으로 인한 부식과 손상이 
-            가속화되고 있음. 작품 〈취약성의 임계선: 위기의 문화유산〉은 이러한 해양 
-            출수 도자기를 중심으로, 기후변화와 환경오염으로 인해 문화유산이 직면한 
-            손상 문제를 디지털 기술로 시각화 함.
+            〈파편의 공명〉은 백자호롱과 화문기화를 통해 유물이 단순한 과거의 흔적이 아니라 
+            오늘날 우리와 대화하는 존재임을 보여줌. 백자호롱은 어둠을 밝히는 빛의 매개체로 
+            조선인의 삶과 정서를 담고 있으며, 화문기화는 꽃무늬 장식을 통해 길상과 풍요를 
+            기원하는 상징적 유물임.
           </Paragraph>
 
           <Paragraph>
-            이 미디어 작업은 유물의 다시점 3D RGB 4K 60FPS 이미지와 3차원 
-            CT 데이터를 결합해 원형을 디지털로 재현하는 동시에, 실시간 환경 
-            뉴스 데이터를 연동해 기후변화와 오염 수치에 따라 손상 과정을 가속·감속 
-            시뮬레이션 함. 특히 CT 데이터는 수분 침투와 균열 과정의 시뮬레이션을 통해, 
-            오염이 심화될수록 유물 손상이 누적되는 양상을 보여줌. 또한 이 작업은 단순한 
-            보존을 넘어, 디지털 데이터가 지닌 고유한 특성을 통해 환경 문제와 문화유산 
-            보존이라는 메시지를 확장하고 있음. 관람객은 유물의 과거를 기록하는 차원을 넘어, 
-            변화와 재해석을 통해 새로운 의미와 형태로 확장되는 가능성을 경험하게 됨.
+            이 미디어는 유물의 겉모습을 넘어 보이지 않던 내면을 드러내고, QR코드를 통해 
+            접속한 챗봇을 통해 유물의 ‘목소리’를 불러내 관람객과의 대화를 연다. 관람객은 
+            실제 질감이 살아 있는 3D 데이터를 감상하며 과거의 의미가 오늘날 새로운 언어로 
+            되살아나는 순간을 경험할 수 있음. 이 과정을 통해 유물은 빛과 기원의 메시지를 
+            전하며, 기술과 예술이 교차하는 지점에서 특별한 소통의 장을 형성함.
           </Paragraph>
 
           <Paragraph>
-           According to the National Research Institute of Maritime Cultural 
-           Heritage, 97% of marine-recovered artifacts are ceramics, and 
-           corrosion and damage have accelerated with recent rises in sea 
-           temperature and the influx of pollutants. &lt;Thresholds of 
-           Fragility: Heritage at Risk&gt; focuses on these marine finds, 
-           digitally visualizing the damage driven by climate change and 
-           environmental pollution.
+            &lt;Resonance of Fragments&gt; shows that artifacts are not mere traces of 
+            the past but voices in conversation with the present. The white-porcelain 
+            lantern embodies the light that once pierced darkness, carrying the sentiments 
+            and daily life of Joseon; the floral-tile (hwamun giwa) is a symbolic object 
+            whose blossoms signified auspice and abundance.
           </Paragraph>
 
           <Paragraph>
-           The work combines multi-view 3D RGB 4K 60fps imagery with 3D CT 
-           data to digitally reconstruct the originals, while linking to 
-           real-time environmental news feeds to accelerate or decelerate 
-           damage simulations based on climate and pollution indicators. 
-           CT-based simulations of moisture ingress and cracking reveal 
-           how damage accumulates as contamination intensifies. Beyond 
-           simple preservation, the piece leverages the distinctive 
-           capacities of digital data to amplify the message of environmental 
-           crisis and cultural-heritage conservation. Visitors move past 
-           mere record-keeping to experience the potential for heritage to 
-           expand into new meanings and forms through change and reinterpretation.
+            This media work looks beyond surface appearance to reveal an unseen interior.
+            Through a QR-linked chatbot, the artifact’s “voice” is summoned to open a 
+            dialogue with viewers. Audiences encounter high-fidelity 3D data whose tangible 
+            textures invite close looking, experiencing the moment when past meanings 
+            reanimate in a new language today. Through this process, the artifacts convey 
+            messages of light and benediction, forming a distinctive field of exchange at 
+            the intersection of technology and art.
           </Paragraph>
         </Content>
+        {/* QR 코드 섹션 */}
+        <QRRow>
+          <QRItem>
+            <QRImage src={qr_1} alt="qr 1" />
+            <QRLabel>백자호롱</QRLabel>
+          </QRItem>
+
+          <QRItem>
+            <QRImage src={qr_2} alt="qr 2" />
+            <QRLabel>화문기화</QRLabel>
+          </QRItem>
+        </QRRow>
       </DescriptionSection>
 
       <BottomLine />
@@ -255,6 +259,40 @@ const Paragraph = styled.p`
   @media (max-width: 768px) {
     margin-bottom: 40px; /* 모바일에서는 조금 줄이기 */
   }
+`;
+
+const QRRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin: 40px 0 60px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+`;
+
+const QRItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+`;
+
+const QRImage = styled.img`
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+`;
+
+const QRLabel = styled.div`
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
 `;
 
 const BottomLine = styled.div`

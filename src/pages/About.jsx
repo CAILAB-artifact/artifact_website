@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import poster_1 from "../assets/poster_1.png";
+import poster_2 from "../assets/poster_2.png";
 
 export default function About() {
   return (
@@ -19,31 +21,35 @@ export default function About() {
 
         {/* 소개 텍스트 */}
         <Paragraph>
-          《<strong>드러내고, 숨쉬다 (Unveiling and Breathing Resonance)</strong>》는
-          문화체육관광부와 한국콘텐츠진흥원이 지원한 「초고정밀 문화재 복원을 위한 미세구조의
-          3차원 정밀 정보 획득 및 저작 기술개발」 사업의 성과를 기반으로 마련된 전시입니다.
+          한국콘텐츠진흥원이 지원한 「초고정밀 문화재 복원을 위한 미세구조의 3차원 정밀 정보 획득 및 저작 기술 개발(2023–2025)」은
+          한국원자력연구소의 주도로 CAT Beam Tech, 한국과학기술원, 성균관대학교, 중앙대학교 연구팀이 함께 수행하고 있습니다. 
+          본 프로젝트는 미세 구조를 지닌 초소형 문화유산을 비접촉식 방식으로 정밀하게 3차원 데이터화하고, 
+          이를 기반으로 복원 및 문화콘텐츠 제작이 가능한 기술적 기반을 마련하는 것을 목표로 합니다.
         </Paragraph>
 
         <Paragraph>
-          이 사업은 지난 3년간 중앙대학교, 성균관대학교, 한국과학기술원, ㈜세이데이티밋텍 등
-          여러 연구기관이 참여하여 진행되었습니다. 특히 소형 및 초소형 문화재의 미세 구조를
-          초정밀하게 기록하고 보존하는 기술 개발에 주력했으며, 그 과정에서 수집된 방대한
-          3차원 데이터는 단순한 기록을 넘어 디지털 테크놀로지 구현과 예술적 해석으로 확장될 수 있는
-          새로운 가능성을 보여주었습니다.
+          이번 쇼케이스 《드러내고, 숨쉬다(Unveiling and Breathing Resonance)》는 3년간의 연구 성과를 시각화하고, 
+          고정밀 3차원 문화콘텐츠의 활용 가능성과 서비스 모델을 제시하는 장입니다. 본 쇼 케이스는 인공지능과 시각화 기술이 
+          융합된 다양한 작품으로 구성되어 있으며, 〈월 그래픽 시각화〉, 〈유산의 여정(Passage of Heritage)〉, 
+          〈물성의 시간(Time of Materiality)〉, 〈취약성의 임계선(Thresholds of Fragility): 위기의 문화유산Cultural Heritage 
+          in Crisis〉, 〈파편의 공명(Resonance of Fragments)〉, 〈쇼케이스 웹사이트(Showcase Website)〉로 구성되어 있습니다.
         </Paragraph>
 
         <Paragraph>
-          이번 전시는 이러한 연구 성과를 대중에게 공개하는 자리입니다. 관람객은 초고정밀 데이터와
-          인공지능 기술이 결합해 만들어낸 3D 미디어 아트 작품을 통해, 과거와 현재, 원본성과 복원,
-          기술과 미학이 교차하는 다층적인 경험을 체험할 수 있습니다.
+          이번 쇼케이스는 문화유산의 보존과 재현, 기술과 예술, 데이터와 감성의 경계를 잇는 실험적 무대입니다. 
+          이를 통해 우리가 잃어버린 것들과 다시 호흡하며 그 본질적 가치를 성찰할 수 있는 기회를 제공합니다.
         </Paragraph>
 
-        <Paragraph>
-          이는 단순히 전통 유물을 ‘보는 것’을 넘어, 디지털 기술이 문화재를
-          어떻게 새롭게 해석하고 미래로 이어갈 수 있는지를 탐구하는 기회이기도 합니다. 
-          《드러내고, 숨쉬다》는 문화재 보존의 미래적 비전을 공유하며, 기술과 예술이 만나는 새로운 장(場)을
-          열어가고자 합니다.
-        </Paragraph>
+        {/* 포스터 섹션: 위쪽은 크게, 아래쪽은 더 작게 */}
+        <PosterRow>
+          <PosterTop>
+            <PosterImage src={poster_1} alt="poster 1" />
+          </PosterTop>
+
+          <PosterSmall>
+            <PosterImage src={poster_2} alt="poster 2" />
+          </PosterSmall>
+        </PosterRow>
       </Main>
 
       <Footer />
@@ -60,7 +66,7 @@ const PageWrapper = styled.div`
 
 const Main = styled.main`
   flex: 1;
-  padding: 140px 20px 80px; /* Header 공간 확보 + 여백 크게 */
+  padding: 140px 20px 80px;
   max-width: 900px;
   margin: 0 auto;
 `;
@@ -89,12 +95,42 @@ const Subtitle = styled.h2`
 const Paragraph = styled.p`
   font-size: 17px;
   line-height: 2;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
   color: #222;
 
   max-width: 800px;   
   margin-left: auto; 
   margin-right: auto; 
   text-align: left;   
+`;
+
+const PosterRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 0 auto 4rem;
+`;
+
+const PosterImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+`;
+
+const PosterTop = styled.div`
+  width: 100%;
+  max-width: 840px; /* 위에 것을 더 크게 */
+  display: flex;
+  justify-content: center;
+`;
+
+const PosterSmall = styled.div`
+  width: 100%;
+  max-width: 360px; /* 아래 것은 더 작게 */
+  display: flex;
+  justify-content: center;
 `;
 
