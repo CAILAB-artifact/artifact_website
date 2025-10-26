@@ -17,7 +17,7 @@ export default function Work() {
   const works = [
     { id: 1, image: work1, title: "Passage of Heritage", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
     { id: 2, image: work2, title: "Time of Materially", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
-    { id: 3, image: work3, title: "Thresholds of Fragility: Hearitage at Risk", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
+    { id: 3, image: work3, title: "Thresholds of Fragility: Heritage at Risk", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
     { id: 4, image: work4, title: "Resonance of Fragments", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
     { id: 5, image: work5, title: "Wall Graphic Visualization", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
   ];

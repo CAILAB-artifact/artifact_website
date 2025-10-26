@@ -9,10 +9,12 @@ import WorkDetail2 from "./pages/WorkDetail2";
 import WorkDetail3 from "./pages/WorkDetail3";
 import WorkDetail4 from "./pages/WorkDetail4";
 import WorkDetail5 from "./pages/WorkDetail5";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<Work />} /> 
