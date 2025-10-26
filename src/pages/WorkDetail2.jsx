@@ -13,7 +13,7 @@ export default function WorkDetail() {
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4S2NkTz6Hc?si=oBXPEw2Wd4vDqGmG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   `;
 
-  const images = [workdetail2_1, videoIframe, workdeatil2_2, workdeatil2_3];
+  const images = [videoIframe, workdetail2_1, workdeatil2_2, workdeatil2_3];
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {

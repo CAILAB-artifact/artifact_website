@@ -5,15 +5,15 @@ import Footer from "../components/Footer";
 
 // 여러 이미지 임포트
 import workdetail1 from "../assets/workdetail1.png";
-import workdetail1_1 from "../assets/workdetail1-2.png";
+import workdetail1_2 from "../assets/workdetail1-2.png";
 import workdetail1_3 from "../assets/workdetail1-3.png";
 
 export default function WorkDetail() {
   const videoIframe = `
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/TvVtYaqCni8?si=wNm4h8rXhVgDVBaO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4S2NkTz6Hc?si=oBXPEw2Wd4vDqGmG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   `;
 
-  const images = [workdetail1, workdetail1_1, videoIframe, workdetail1_3];
+  const images = [videoIframe, workdetail1, workdetail1_2, workdetail1_3];
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {

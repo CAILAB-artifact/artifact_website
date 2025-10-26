@@ -4,8 +4,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 // 이미지
-import workdetail4_1 from "../assets/workdetail4-1.png";
-import workdetail4_2 from "../assets/workdetail4-2.png";
 import qr_1 from "../assets/qr_1.png";
 import qr_2 from "../assets/qr_2.png";
 
@@ -14,7 +12,8 @@ export default function WorkDetail() {
     <iframe width="560" height="315" src="https://www.youtube.com/embed/ggOpF1k9Ef0?si=I-HgIOwuOgeW59pi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   `;
 
-  const images = [workdetail4_1, workdetail4_2, videoIframe];
+  // keep only the video slide; static images removed per request
+  const images = [videoIframe];
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -37,7 +36,7 @@ export default function WorkDetail() {
       <DescriptionSection>
         {/* 이미지 슬라이드 섹션 */}
         <SliderContainer>
-          <ArrowButton onClick={prevSlide}>‹</ArrowButton>
+          {images.length > 1 && <ArrowButton onClick={prevSlide}>‹</ArrowButton>}
 
           <ImageContainer>
             {typeof images[current] === "string" && images[current].trim().startsWith("<iframe") ? (
@@ -47,15 +46,17 @@ export default function WorkDetail() {
             )}
           </ImageContainer>
 
-          <ArrowButton onClick={nextSlide}>›</ArrowButton>
+          {images.length > 1 && <ArrowButton onClick={nextSlide}>›</ArrowButton>}
         </SliderContainer>
 
         {/* 하단 작은 점 네비게이션 */}
-        <Dots>
-          {images.map((_, index) => (
-            <Dot key={index} $active={index === current} onClick={() => setCurrent(index)} />
-          ))}
-        </Dots>
+        {images.length > 1 && (
+          <Dots>
+            {images.map((_, index) => (
+              <Dot key={index} $active={index === current} onClick={() => setCurrent(index)} />
+            ))}
+          </Dots>
+        )}
 
         {/* 회색 설명 영역 */}
         <Content>

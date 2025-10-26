@@ -15,11 +15,11 @@ export default function Work() {
   const navigate = useNavigate(); // 페이지 이동용 Hook
 
   const works = [
-    { id: 1, image: work1, title: "Passage of Heritage", artist: "LEVINNON ARTISTS", date: "10 - 25 APR 2024" },
-    { id: 2, image: work2, title: "Time of Materially", artist: "JOHNSON, MARY ANN", date: "09 - 12 MAY 2024" },
-    { id: 3, image: work3, title: "Currents of Time", artist: "ⓒRTIST, EVORY", date: "01 - 30 JAN 2024" },
-    { id: 4, image: work4, title: "Resonance of Fragments", artist: "RHEA GASOTREA", date: "17 - 20 OCT 2024" },
-    { id: 5, image: work5, title: "Currents of Time", artist: "ⓒRTIST, EVORY", date: "01 - 30 JAN 2024" },
+    { id: 1, image: work1, title: "Passage of Heritage", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
+    { id: 2, image: work2, title: "Time of Materially", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
+    { id: 3, image: work3, title: "Thresholds of Fragility: Hearitage at Risk", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
+    { id: 4, image: work4, title: "Resonance of Fragments", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
+    { id: 5, image: work5, title: "Wall Graphic Visualization", artist: "SEHWA MUSEUM", date: "05 - 14 NOV 2025" },
   ];
 
   return (
@@ -43,7 +43,23 @@ export default function Work() {
                   <span>{work.date}</span>
                 </Meta>
                 <Separator />
-                <CardTitle>{work.title}</CardTitle>
+                <CardTitle>
+                  {work.title.includes(":") ? (
+                    (() => {
+                      const parts = work.title.split(":");
+                      const left = parts.shift();
+                      const right = parts.join(":").trim();
+                      return (
+                        <>
+                          <span>{left}:</span>
+                          <SmallTitleRight>{right}</SmallTitleRight>
+                        </>
+                      );
+                    })()
+                  ) : (
+                    work.title
+                  )}
+                </CardTitle>
               </CardContent>
             </Card>
           ))}
@@ -159,4 +175,15 @@ const CardTitle = styled.h3`
   font-size: 22px;
   font-weight: 700;
   line-height: 1.3;
+`;
+
+const SmallTitleRight = styled.span`
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 16px; /* smaller for the right-hand part */
+  font-weight: 600;
+  vertical-align: baseline;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
