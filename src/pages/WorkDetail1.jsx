@@ -5,15 +5,17 @@ import Footer from "../components/Footer";
 
 // 여러 이미지 임포트
 import workdetail1 from "../assets/workdetail1.png";
-import workdetail1_2 from "../assets/workdetail1-2.png";
-import workdetail1_3 from "../assets/workdetail1-3.png";
 
 export default function WorkDetail() {
-  const videoIframe = `
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4S2NkTz6Hc?si=oBXPEw2Wd4vDqGmG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  const videoIframe1 = `
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/o0_yZMWqMmY?si=JXzhC0WxoNGOlDv7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   `;
 
-  const images = [videoIframe, workdetail1, workdetail1_2, workdetail1_3];
+  const videoIframe2 = `
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KLT2zTfF86w?si=vyUROoeZkVEGvzhe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  `;
+
+  const images = [videoIframe1, videoIframe2, workdetail1];
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {

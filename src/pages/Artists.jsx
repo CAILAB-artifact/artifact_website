@@ -43,7 +43,7 @@ export default function Artists() {
       name: "Seongmee Yoon",
       email: "bv829960@cau.ac.kr",
       degree:
-        "Ph.D. candidate 중앙대학교 문화재학과 / 디지털 문화유산학 이학 박사 \n M.A. Newcastle University UK, Art Museum and Gallery Studies / 문학 석사 \nB.A. 충북대학교 고고미술사학과 / 문학 학사",
+        "Ph.D. candidate 중앙대학교 문화재학과 / 디지털 문화유산학 이학 박사 중 \n M.A. Newcastle University UK, Art Museum and Gallery Studies / 문학 석사 \nB.A. 충북대학교 고고미술사학과 / 문학 학사",
       research:
         "박물관학(Museum Studies), 디지털 인문학(Digital Humanities),  \n 미술관 정보학(Museum Informatics), 박물관 관람객 경험(Visitor Experience in museums), \n 유산해석(Heritage Interpretation), 박물관 지역사회 참여(Community Engagement in Museums)",
       image: artist3,
