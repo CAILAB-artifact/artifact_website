@@ -16,21 +16,30 @@ import CtaSection from "../components/CtaSection";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  // 각 이미지별 상세 페이지 직접 지정
+  const slides = [
+    { img: img1, link: "/work/4" }, // 1번 → WorkDetail4
+    { img: img2, link: "/work/3" }, // 2번 → WorkDetail3
+    { img: img3, link: "/work/2" }, // 3번 → WorkDetail2
+    { img: img4, link: "/work/5" }, // 4번 → WorkDetail5
+    { img: img5, link: "/work/1" }, // 5번 → WorkDetail1
+  ];
+
   return (
     <>
       <Header /> {/* 항상 최상단에 고정 */}
+
       <Hero>
         <Background>
           <img src={banner} alt="banner" />
         </Background>
       </Hero>
 
-      <ImageSlider images={[img1, img2, img3, img4, img5]} />
+      {/* 이미지 + 링크 배열 전달 */}
+      <ImageSlider slides={slides} />
 
       <ExhibitionText />
-
       <CtaSection />
-
       <Footer />
     </>
   );
@@ -41,7 +50,7 @@ export default function Home() {
 const Hero = styled.section`
   position: relative;
   width: 100%;
-  height: auto; 
+  height: auto;
   overflow: hidden;
 `;
 

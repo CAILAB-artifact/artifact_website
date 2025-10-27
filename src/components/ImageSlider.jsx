@@ -2,20 +2,23 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router-dom"; // 추가
+import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import styled from "styled-components";
 
-export default function ImageSlider({ images = [] }) {
+export default function ImageSlider({ slides = [] }) {
+  const navigate = useNavigate(); // 페이지 이동용 Hook
+
   return (
     <SliderWrapper>
       <Swiper
-        effect={"coverflow"}
+        effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        initialSlide={2} // 기본으로 3번째(인덱스 2)를 활성화
-        slidesPerView={"auto"}
+        initialSlide={2} // 기본으로 가운데(3번째) 활성화
+        slidesPerView="auto"
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -24,13 +27,16 @@ export default function ImageSlider({ images = [] }) {
           slideShadows: false,
         }}
         pagination={{ clickable: true }}
-        loop={false} // 끝나면 다시 처음으로
-        modules={[EffectCoverflow, Pagination]} 
+        loop={false}
+        modules={[EffectCoverflow, Pagination]}
       >
-        {images.map((img, index) => (
-          <SwiperSlide key={index}>
+        {slides.map((slide, index) => (
+          <SwiperSlide
+            key={index}
+            onClick={() => navigate(slide.link)} // 클릭 시 해당 링크로 이동
+          >
             <PosterBox>
-              <img src={img} alt={`slide-${index}`} />
+              <img src={slide.img} alt={`slide-${index}`} />
             </PosterBox>
           </SwiperSlide>
         ))}
@@ -38,6 +44,8 @@ export default function ImageSlider({ images = [] }) {
     </SliderWrapper>
   );
 }
+
+/* ---------------- styled ---------------- */
 
 const SliderWrapper = styled.div`
   width: 100%;
@@ -49,7 +57,7 @@ const SliderWrapper = styled.div`
   .swiper {
     width: 100%;
     height: 100%;
-    padding-bottom: 50px; /* 아래 공간 확보 */
+    padding-bottom: 50px;
   }
 
   .swiper-slide {
@@ -58,6 +66,12 @@ const SliderWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   .swiper-pagination {
@@ -73,6 +87,7 @@ const SliderWrapper = styled.div`
   .swiper-pagination-bullet-active {
     background: #555;
     width: 24px;
+    height: 8px;
     border-radius: 8px;
   }
 `;
@@ -89,13 +104,12 @@ const PosterBox = styled.div`
     height: 100%;
     object-fit: cover;
     display: block;
-
     filter: grayscale(100%);
     transition: filter 0.6s ease;
   }
 
-  /* 가운데(active) + hover일 때만 컬러 */
-  .swiper-slide-active &:hover img {
+  .swiper-slide-active & img,
+  &:hover img {
     filter: grayscale(0%);
   }
 `;
