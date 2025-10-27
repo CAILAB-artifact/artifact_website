@@ -60,7 +60,7 @@ export default function Artists() {
     },
     {
       role: "Creative & Research Team",
-      name: "Soeun Park",
+      name: "Sojung Park",
       email: "sj.caugsaim@gmail.com",
       degree: `M.S. Candidate Chung-Ang University, Graduate School of Advanced Imaging \n Science, Multimedia & Film / 중앙대학교 첨단영상대학원 영상학 석사 이수 중 \n B.E. Chung-Ang University, College of Art & Technology & College of Software / \n 중앙대학교 컴퓨터예술학 및 소프트웨어공학 학사`,
       research: `이미징 공학 및 예술(Imaging Science and Arts), 인공지능(Artificial Intelligence), \n 멀티모달 학습(Multimodal Deep Learning), 데이터 시각화 및 분석 (Data Visualization & Analysis)`,
@@ -70,10 +70,8 @@ export default function Artists() {
       role: "Creative & Research Team",
       name: "Soeun Park",
       email: "soeun.cau@gmail.com",
-      degree:
-        "M.S. Candidate Chung-Ang University, Graduate School of Advanced Imaging Science, \n Multimedia & Film / 중앙대학교 첨단영상대학원 영상학 석사 이수 중",
-      research:
-        "컴퓨터 비전(Computer Vision), 멀티모달 학습(Multimodal Deep Learning),  \n 예술공학(Art and Technology), 데이터 시각화 및 분석 (Data Visualization & Analysis)",
+      degree: `M.S. Candidate Chung-Ang University, Graduate School of Advanced Imaging \n Science, Multimedia & Film / 중앙대학교 첨단영상대학원 영상학 석사 이수 중 \n B.E. Chung-Ang University, College of Art & Technology & College of Software / \n 중앙대학교 컴퓨터예술학 및 소프트웨어공학 학사`,
+      research: `이미징 공학 및 예술(Imaging Science and Arts), 인공지능(Artificial Intelligence), \n 멀티모달 학습(Multimodal Deep Learning), 데이터 시각화 및 분석 (Data Visualization & Analysis)`,
       image: artist5,
     },
     {
